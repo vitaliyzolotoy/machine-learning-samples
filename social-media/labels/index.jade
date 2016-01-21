@@ -1,0 +1,33 @@
+html
+  head
+    title!= title
+    style
+      include index.css
+  body
+    h1!= message
+    form(method='post', action='/', name='tweets', enctype='application/json')
+      ul.tweets
+        each tweet, index in tweets
+          li.tweet!= tweet.tweet
+            div.labels
+              input(type='hidden', name=index + '[AssignmentStatus]', value='Approved')
+              input(type='hidden', name=index + '[Input.id]', value=tweet.id)
+              label
+                input(type='radio', name=index + '[Answer.Q3Answer]', value='Request')
+                span Making a request
+              label
+                input(type='radio', name=index + '[Answer.Q3Answer]', value='Question')
+                span Asking a question
+              label
+                input(type='radio', name=index + '[Answer.Q3Answer]', value='Problem Report')
+                span Reporting a problem
+              label
+                input(type='radio', name=index + '[Answer.Q3Answer]', value='Angry')
+                span Angry or Unhappy
+              label
+                input(type='radio', name=index + '[Answer.Q3Answer]', value='N/A', checked)
+                span None of the above
+        else
+          li sorry, no tweets!
+
+      input(type='submit')

@@ -1,0 +1,9 @@
+.tweet { margin-bottom: 2rem; }
+
+.labels { margin-top: 0.5rem; }
+
+label { display: block;
+        margin-bottom: 0.2rem; }
+
+input[type='checkbox'] { position: absolute;
+                         margin-left: -1rem; }
